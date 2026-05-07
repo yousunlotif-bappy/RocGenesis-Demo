@@ -27,6 +27,11 @@ from utils.safety_rules import scan_text_safety, build_safety_report
 from utils.llm_client import get_api_status
 
 
+# IMPORTANT DEPLOY FIX:
+# Any custom HTML/CSS rendered by Streamlit must use unsafe_allow_html=True.
+# Without it, deployed apps may show raw <div> / CSS text on the page.
+
+
 # =========================
 # PAGE CONFIG
 # =========================
@@ -761,9 +766,6 @@ def make_debug_report(result):
 # PREMIUM SIDEBAR
 # =========================
 logo_candidates = [
-    "assets/logo_clean.png",
-    "assets/logo_clean.png",
-    "assets/logo_clean.png",
     "assets/logo_clean.png",
 ]
 logo_path = next((path for path in logo_candidates if os.path.exists(path)), None)
