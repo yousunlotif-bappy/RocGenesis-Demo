@@ -1,0 +1,36 @@
+{
+  "no_hip_gpu": {
+    "patterns": ["No HIP GPUs are available", "torch.cuda.is_available() returned False"],
+    "error_type": "GPU Detection Error",
+    "root_cause": "PyTorch cannot detect the AMD GPU through ROCm/HIP.",
+    "recommended_fix": [
+      "Check ROCm installation.",
+      "Verify PyTorch ROCm build.",
+      "Run torch.version.hip check.",
+      "Confirm GPU visibility with rocminfo."
+    ]
+  },
+  "hip_out_of_memory": {
+    "patterns": ["HIP out of memory", "hipErrorOutOfMemory", "out of memory"],
+    "error_type": "HIP Out of Memory",
+    "root_cause": "The model or batch configuration requires more VRAM than available.",
+    "recommended_fix": [
+      "Use bf16/fp16 precision.",
+      "Reduce batch size.",
+      "Reduce sequence/context length.",
+      "Use device_map='auto'.",
+      "Use torch.inference_mode()."
+    ]
+  },
+  "torch_not_rocm": {
+    "patterns": ["torch not compiled with ROCm", "ROCm support not found"],
+    "error_type": "PyTorch ROCm Build Error",
+    "root_cause": "Installed PyTorch version may not include ROCm support.",
+    "recommended_fix": [
+      "Install a ROCm-compatible PyTorch build.",
+      "Check torch.version.hip.",
+      "Verify Python and ROCm version compatibility."
+    ]
+  }
+}
+

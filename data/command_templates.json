@@ -1,0 +1,23 @@
+{
+  "check_pytorch_rocm": {
+    "description": "Check PyTorch version, ROCm/HIP backend, and GPU availability.",
+    "command": "python -c \"import torch; print(torch.__version__); print(torch.version.hip); print(torch.cuda.is_available())\""
+  },
+  "check_rocm_info": {
+    "description": "Check whether ROCm can see AMD GPU devices.",
+    "command": "rocminfo | grep -i 'Name'"
+  },
+  "create_project": {
+    "description": "Create a new Python project folder.",
+    "command": "mkdir rocgenesis-demo && cd rocgenesis-demo"
+  },
+  "install_requirements": {
+    "description": "Install Python dependencies.",
+    "command": "pip install -r requirements.txt"
+  },
+  "run_streamlit": {
+    "description": "Run the Streamlit app locally.",
+    "command": "streamlit run app.py"
+  }
+}
+
