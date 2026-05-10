@@ -19,6 +19,11 @@ It combines project blueprinting, safe command generation, ROCm/PyTorch debuggin
 
 ---
 
+Live Demo
+https://rocgenesis-demo.onrender.com/
+
+https://huggingface.co/spaces/yousunlotif/RocGenesis
+
 ## 🚀 Tagline
 
 **Build, debug, secure, optimize, and ship AI apps on AMD GPUs.**
